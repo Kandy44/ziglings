@@ -20,7 +20,7 @@ pub fn main() void {
         if (i % 3 == 0) std.debug.print("Fizz", .{});
         if (i % 5 == 0) std.debug.print("Buzz", .{});
         if (!(i % 3 == 0) and !(i % 5 == 0)) {
-            std.debug.print("{s}", .{"Fizz Buzz"});
+            std.debug.print("{}", .{i});
         }
         std.debug.print(", ", .{});
     }

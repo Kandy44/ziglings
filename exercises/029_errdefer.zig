@@ -21,7 +21,6 @@ const MyErr = error{ GetFail, IncFail };
 
 pub fn main() void {
     // We simply quit the entire program if we fail to get a number:
-    errdefer void;
     var a: u32 = makeNumber() catch return;
     var b: u32 = makeNumber() catch return;
 
@@ -39,7 +38,7 @@ fn makeNumber() MyErr!u32 {
 
     num = try increaseNumber(num); // <-- This could ALSO fail!
 
-    std.debug.print("got {}.\n", .{num});
+    std.debug.print("got {}. ", .{num});
 
     return num;
 }
