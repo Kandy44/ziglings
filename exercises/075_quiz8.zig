@@ -49,7 +49,11 @@ const Path = struct {
 //
 // Please fill in the body of this function!
 fn makePath(from: *Place, to: *Place, dist: u8) Path {
-
+    return Path{
+        .from = from,
+        .to = to,
+        .dist = dist,
+    };
 }
 
 // Using our new function, these path definitions take up considerably less
@@ -204,7 +208,7 @@ pub fn main() void {
 }
 
 fn printTrip(trip: []?TripItem) void {
-    var i: u8 = @intCast(trip.len);
+    var i: u8 = @intCast(u8, trip.len);
 
     while (i > 0) {
         i -= 1;
